@@ -25,6 +25,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script src="bussinesslogic.js"></script>
+
 </head>
 
 <body>
@@ -63,7 +66,7 @@
                             <h6 class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown" style="letter-spacing: 3px;">Beauty Dream Zone Home services</h6>
                             <h3 class="display-3 text-capitalize text-white mb-3">Massage Treatment</h3>
                             <p class="mx-md-5 px-5">Lorem rebum magna dolore amet lorem eirmod magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum labore diam</p>
-                            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Make Appointment</a>
+                            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="appointment.html">Make Appointment</a>
                         </div>
                     </div>
                 </div>
@@ -74,7 +77,7 @@
                             <h6 class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown" style="letter-spacing: 3px;">Beauty Dream Zone Home services</h6>
                             <h3 class="display-3 text-capitalize text-white mb-3">Facial Treatment</h3>
                             <p class="mx-md-5 px-5">Lorem rebum magna dolore amet lorem eirmod magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum labore diam</p>
-                            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Make Appointment</a>
+                            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="appointment.html">Make Appointment</a>
                         </div>
                     </div>
                 </div>
@@ -85,7 +88,7 @@
                             <h6 class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown" style="letter-spacing: 3px;">Beauty Dream Zone Home services</h6>
                             <h3 class="display-3 text-capitalize text-white mb-3">Cellulite Treatment</h3>
                             <p class="mx-md-5 px-5">Lorem rebum magna dolore amet lorem eirmod magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum labore diam</p>
-                            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Make Appointment</a>
+                            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="appointment.html">Make Appointment</a>
                         </div>
                     </div>
                 </div>
@@ -197,20 +200,22 @@
                 </div>
             </div>
         </div>
+	
         <div class="row justify-content-center bg-appointment mx-0">
             <div class="col-lg-6 py-5">
                 <div class="p-5 my-5" style="background: rgba(33, 30, 28, 0.7);">
                     <h1 class="text-white text-center mb-4">Make Appointment</h1>
-                    <form>
-                        <div class="form-row">
+		    <form id="1FAIpQLSdrmeNCfAmtyScsmh_mW9fWYP0twNGXYf4OstMQUAaMQ9G3SA" onsubmit="submitFormAndShowPopup(); return false;">
+                         <div class="form-row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control bg-transparent p-4" placeholder="Your Name" required="required" />
+                                    <input type="text" name="entry.Name" id="name" class="form-control bg-transparent p-4" placeholder="Your Name" required="required" />
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="email" class="form-control bg-transparent p-4" placeholder="Your Email" required="required" />
+				    <input type="tel" name="entry.Phone Number" id="phone" class="form-control bg-transparent p-4"placeholder="Your Phone Number" pattern="[0-9]{10}" required="required" />
+
                                 </div>
                             </div>
                         </div>
@@ -218,14 +223,14 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <div class="date" id="date" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Select Date" data-target="#date" data-toggle="datetimepicker"/>
+                                        <input type="text" name="entry.Date" id="date" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Select Date" data-target="#date" data-toggle="datetimepicker"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <div class="time" id="time" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Select Time" data-target="#time" data-toggle="datetimepicker"/>
+                                        <input type="text" name="entry.time" id="time" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Select Time" data-target="#time" data-toggle="datetimepicker"/>
                                     </div>
                                 </div>
                             </div>
@@ -249,6 +254,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <!-- Service End -->
 
