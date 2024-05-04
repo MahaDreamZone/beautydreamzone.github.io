@@ -1,15 +1,31 @@
 
-function submitFormAndShowPopup() {
-    // Set the values of the form fields
-    document.getElementById('entry.Name').value = document.getElementById('name').value;
-    document.getElementById('entry.Phone_Number').value = document.getElementById('phone').value;
-    document.getElementById('entry.Date').value = document.getElementById('date').value;
-    document.getElementById('entry.Time').value = document.getElementById('time').value;
+function submitForm(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
 
-    // Submit the form to Google Form
-    document.getElementById('1FAIpQLSdrmeNCfAmtyScsmh_mW9fWYP0twNGXYf4OstMQUAaMQ9G3SA').action = 'https://docs.google.com/forms/d/e/1FAIpQLSdrmeNCfAmtyScsmh_mW9fWYP0twNGXYf4OstMQUAaMQ9G3SA/formResponse';
-    document.getElementById('1FAIpQLSdrmeNCfAmtyScsmh_mW9fWYP0twNGXYf4OstMQUAaMQ9G3SA').submit();
-    
-    // Show a popup message
-    alert('Appointment booked!');
+    const form = document.getElementById('appointmentForm');
+    const formData = new FormData(form);
+    const url = 'https://docs.google.com/forms/d/e/1FAIpQLSc99H9vi6mjtPWGR51U4gWPebc6huHJKkL5XW28LCvR7HMZvg/formResponse'; // Replace 'https://example.com/submit' with your form submission URL
+
+
+    fetch(url, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Appointment booked successfully!');
+            form.reset(); // Reset the form after successful submission
+        } else {
+            alert('Failed to book appointment. Please try again.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+    alert('Appointment booked successfully!');
+    form.reset(); // Reset the form after successful submission
 }
+
+// Attach the submitForm function to the form's submit event
+document.getElementById('appointmentForm').addEventListener('submit', submitForm);
+
