@@ -62,7 +62,8 @@
     <!-- Topbar End -->
     <!-- Navbar Start -->
     <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+        <!--nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5"-->
+	<nav    class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn activeselect" >
             <a href="index.html" class="navbar-brand ml-lg-3">
                 <h1 class="m-0 text-primary"><span class="text-dark">Beauty Dream</span> Zone</h1>
             </a>
@@ -71,9 +72,9 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav m-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="index.html" class="nav-item nav-link">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Services</a>
+                    <a href="check.html" class="nav-item nav-link">Services</a>
                     <a href="price.html" class="nav-item nav-link">Pricing</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -89,6 +90,19 @@
                 <a href="" class="btn btn-primary d-none d-lg-block">Book Now</a>
             </div>
         </nav>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var currentPath = window.location.pathname.split('/').pop();
+    var links = document.querySelectorAll('.navbar-nav .nav-item.nav-link');
+    console.log('Hi sabeek');
+    links.forEach(function(link) {
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
     </div>
     <!-- Navbar End -->
 </body>

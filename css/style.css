@@ -9703,3 +9703,150 @@ h6,
   padding: 0;
   list-style-type: none;
 }
+./* Grid container */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Grid row */
+.grid-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+/* Grid item */
+.grid-item {
+    width: calc(33.33% - 10px); /* 3 columns with margin between items */
+    background-color: #f9f9f9;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-right: 10px; /* Margin between items */
+}
+
+/* Clearfix for the last row */
+.grid-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .grid-item {
+        width: calc(50% - 10px); /* 2 columns on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .grid-item {
+        width: 100%; /* 1 column on smallest screens */
+    }
+}
+
+
+
+
+
+/* CSS Styles for Service Grid */
+
+.service-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+    grid-gap: 20px; /* Gap between grid items */
+}
+.service-grid-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns per row */
+    grid-gap: 20px; /* Gap between grid items in a row */
+}
+.service-grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 300px; /* Adjust the minimum width of each grid item */
+}
+
+.service-grid-item img {
+    width: 100%; /* Adjust the image width as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    object-fit: cover; /* Ensures the image covers the entire container */
+    border-radius: 8px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-grid-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3,
+.overlay p {
+    margin: 0;
+    padding: 0;
+}
+
+.overlay p {
+    font-weight: bold;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+.service-grid-item-content {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-grid-item-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+
+.service-grid-item-content .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 0 0 8px 8px;
+    transition: 0.3s;
+}
+
+.service-grid-item-content:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    /* Switch to single column layout on smaller screens */
+    .service-grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* CSS Styles for Service Grid */

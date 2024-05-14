@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Beauty Dream Zone Home services</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Beauty Dream Zone Home services" name="keywords">
+    <meta content="Beauty Dream Zone Home services" name="description">
+
+    <!-- Favicon -->
+    <!--link href="img/favicon.ico" rel="icon--">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="servicelist.css" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="servicelist.js"></script>
+    
+
+</head>
+<body>
+    <!-- Include the Header -->
+    <div id="header"></div>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error fetching header:', error);
+            });
+    </script>
+   
+  <!-- Header Start -->
+    <div class="jumbotron jumbotron-fluid bg-jumbotron" style="margin-bottom: 90px;">
+        <div class="container text-center py-5">
+            <h3 class="text-white display-3 mb-4">Services</h3>
+            <div class="d-inline-flex align-items-center text-white">
+                <p class="m-0"><a class="text-white" href="">Home</a></p>
+                <i class="far fa-circle px-3"></i>
+                <p class="m-0">Services</p>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+    <div class="row mx-0 justify-content-center text-center">
+            <div class="col-lg-6">
+                <h6 class="d-inline-block bg-light text-primary text-uppercase py-1 px-2">Our Service</h6>
+                <h1>Spa & Beauty Services</h1>
+            </div>
+        </div>
+
+    <div class="service-grid-container" id="services-list"></div>
+    ${selectedServices}
+    <!--Appointment service start -->
+    <div class="row justify-content-center bg-appointment mx-0">
+            <div class="col-lg-6 py-5">
+                <div class="p-5 my-5" style="background: rgba(33, 30, 28, 0.7);">
+                    <h1 class="text-white text-center mb-4">Make Appointment</h1>
+		    <form id="appointmentForm">
+                         <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" name="entry.489093427" class="form-control bg-transparent p-4" placeholder="Your Name" required="required" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+				    <input type="tel" name="entry.1895158591" class="form-control bg-transparent p-4"placeholder="Your Phone Number" pattern="[0-9]{10}" required="required" />
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="date" id="Date" data-target-input="nearest">
+                                        <input type="date" name="entry.1702414217" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Select Date" data-target="#date" data-toggle="datetimepicker"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="time" id="Time" data-target-input="nearest">
+                                        <input type="time" name="entry.1719242396" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Select Time" data-target="#time" data-toggle="datetimepicker"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+					<select name="entry.581152475" id="checkboxContainer" class="custom-select bg-transparent px-4" style="height: 47px;" multiple>
+                                                                     
+      					</select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn btn-primary btn-block" type="submit" style="height: 47px;">Make Appointment</button>
+                            </div>
+                        </div>
+                    </form>
+		   <script src="bussinesslogic.js"></script>
+	
+                </div>
+            </div>
+        </div>
+
+    </div>
+<!-- service end-->
+    <!-- Include the Footer -->
+    <div id="footer"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error fetching footer:', error);
+            });
+    </script>
+	
+    
+</body>
+</html>

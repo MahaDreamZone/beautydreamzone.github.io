@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Beauty Dream Zone Home services</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Beauty Dream Zone Home services" name="keywords">
+    <meta content="Beauty Dream Zone Home services" name="description">
+
+    <!-- Favicon -->
+    <!--link href="img/favicon.ico" rel="icon--">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+<body>
+     <!-- Include the Header -->
+    <div id="header"></div>
+    <script>
+	fetch('header.html')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('header').innerHTML = data;
+    })
+    .catch(error => {
+        console.error('Error fetching header:', error);
+    });
+
+    </script>
+
+<div class="container-fluid px-0 py-5 my-5">
+        <div class="row mx-0 justify-content-center text-center">
+            <div class="col-lg-6">
+                <h6 class="d-inline-block bg-light text-primary text-uppercase py-1 px-2">Our Service</h6>
+                <h1>Spa & Beauty Services</h1>
+            </div>
+        </div>
+        <div class="owl-carousel service-carousel">
+            <div class="service-item position-relative">
+                <img class="img-fluid" src="img/service-1.jpg" alt="">
+                <div class="service-text text-center">
+                    <h4 class="text-white font-weight-medium px-3">Body Massage</h4>
+                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
+                    <div class="w-100 bg-white text-center p-4" >
+                        <a class="btn btn-primary" href="">Make Order</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service-item position-relative">
+                <img class="img-fluid" src="img/service-2.jpg" alt="">
+                <div class="service-text text-center">
+                    <h4 class="text-white font-weight-medium px-3">Stone Therapy</h4>
+                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
+                    <div class="w-100 bg-white text-center p-4" >
+                        <a class="btn btn-primary" href="">Make Order</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service-item position-relative">
+                <img class="img-fluid" src="img/service-3.jpg" alt="">
+                <div class="service-text text-center">
+                    <h4 class="text-white font-weight-medium px-3">Facial Therapy</h4>
+                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
+                    <div class="w-100 bg-white text-center p-4" >
+                        <a class="btn btn-primary" href="">Make Order</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service-item position-relative">
+                <img class="img-fluid" src="img/service-4.jpg" alt="">
+                <div class="service-text text-center">
+                    <h4 class="text-white font-weight-medium px-3">Skin Care</h4>
+                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
+                    <div class="w-100 bg-white text-center p-4" >
+                        <a class="btn btn-primary" href="">Make Order</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service-item position-relative">
+                <img class="img-fluid" src="img/service-5.jpg" alt="">
+                <div class="service-text text-center">
+                    <h4 class="text-white font-weight-medium px-3">Stream Bath</h4>
+                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
+                    <div class="w-100 bg-white text-center p-4" >
+                        <a class="btn btn-primary" href="">Make Order</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service-item position-relative">
+                <img class="img-fluid" src="img/service-6.jpg" alt="">
+                <div class="service-text text-center">
+                    <h4 class="text-white font-weight-medium px-3">Face Masking</h4>
+                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
+                    <div class="w-100 bg-white text-center p-4" >
+                        <a class="btn btn-primary" href="">Make Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <h1>Service Names and Prices</h1>
+    <ul id="services-list"></ul>
+    <script>
+        // ID of your Google Sheet
+        var sheetId = '1xkhS8pSlZYJ_R0stEzkw-CAHLSr-JnH4Emm5CeOdh8o';
+
+        // URL of the Google Sheet
+	<!--https://docs.google.com/spreadsheets/d/1xkhS8pSlZYJ_R0stEzkw-CAHLSr-JnH4Emm5CeOdh8o/edit?usp=sharing-->
+        var url = 'https://docs.google.com/spreadsheets/d/' + sheetId + '/gviz/tq?tqx=out:json';
+
+        // Fetch the Google Sheet data
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                // Parse the JSON response
+                var json = JSON.parse(data.substr(47).slice(0, -2));
+                var rows = json.table.rows;
+
+                // Display service names and prices
+                var servicesList = document.getElementById('services-list');
+                rows.forEach(row => {
+                    var service = row.c[0].v;
+                    var price = row.c[1].v;
+                    var listItem = document.createElement('li');
+                    listItem.textContent = service + ' - $' + price;
+                    servicesList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+
+
+    <!-- Include the Footer -->
+    <div id="footer"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

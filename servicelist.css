@@ -1,0 +1,166 @@
+:root {
+    --image-size: 350px; /* Define the image size here */
+}
+
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set box-sizing to border-box for all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header styles */
+#header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer styles */
+#footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Service grid item styles */
+.service-grid-item {
+    position: relative;
+    width: var(--image-size); /* Adjusted to use --image-size variable */
+    overflow: hidden;
+    border-right: 1px solid #ccc; /* Add a right border to create a line */
+    border-bottom: 1px solid #ccc; /* Add a bottom border to create a line */
+}
+
+/* Service grid item image styles */
+.service-grid-item img {
+    max-width: var(--image-size); /* Adjusted to use --image-size variable */
+    max-height: var(--image-size); /* Adjusted to use --image-size variable */
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Service grid item overlay styles */
+.service-grid-item .service-grid-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: var(--image-size); /* Adjusted to use --image-size variable */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 0 0 8px 8px;
+    transition: background-color 0.3s;
+}
+
+/* Service grid item overlay hover styles */
+.service-grid-item:hover .service-grid-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Service grid item last column styles */
+.service-grid-item:nth-child(3n) {
+    border-right: none; /* Remove right border for every third item to avoid duplication */
+}
+
+
+
+
+/* Service carousel container styles */
+.service-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    margin-top: 20px; /* Add margin top to create space from the header */
+}
+
+/* Service item styles */
+.service-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+/* Service item image styles */
+.service-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Service item text styles */
+.service-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 0 0 8px 8px;
+    transition: background-color 0.3s;
+}
+
+/* Service item overlay styles */
+.service-text:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* Button hover styles */
+.btn:hover {
+    background-color: #0056b3;
+}
+.position-relative {
+  position: relative !important;
+}
+/* Add this CSS to your stylesheet */
+.checkboxContainer label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.checkboxContainer input[type="checkbox"] {
+    margin-right: 5px;
+}
+
