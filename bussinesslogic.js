@@ -25,7 +25,23 @@ function submitForm(event) {
     })
     .then(response => {
         if (response.ok) {
-            alert('Appointment booked successfully!');
+            
+            
+	let emailBody = "Appointment Details:\n\n";
+    	//emailBody += "Selected Services: " + formData.get("entry.581152475") + "\n";
+    	//emailBody += "Client Name: " + formData.get("entry.581152476") + "\n";
+    	//emailBody += "Client Email: " + formData.get("entry.581152477") + "\n";
+    	//emailBody += "Client Message: " + formData.get("entry.581152478") + "\n";
+
+    	// Construct the mailto link
+    	let mailtoLink = "mailto:sabeekahamedsagabdheen@gmail.com";
+    	mailtoLink += "?subject=Appointment Request";
+    	mailtoLink += "&body=" + encodeURIComponent(emailBody);
+
+    // Open the user's email client with the pre-filled email
+    window.location.href = mailtoLink;
+
+	alert('Appointment booked successfully!');
             form.reset(); // Reset the form after successful submission
         } else {
             alert('Failed to book appointment. Please try again.');

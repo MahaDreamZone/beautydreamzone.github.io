@@ -21,16 +21,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     if (servicesInRow === 0 || servicesInRow % 3 === 0) {
                         gridRow = document.createElement('div');
-                        gridRow.className = 'service-grid-item';
+                        gridRow.className = 'service-item position-relative';
                         servicesList.appendChild(gridRow);
                     }
 
                     var serviceItem = document.createElement('div');
-                    serviceItem.className = 'service-grid-item';
+                    serviceItem.className = 'service-item position-relative';
                     serviceItem.innerHTML = `
 			
                         <img class="img-fluid" src="${image}" alt="${service}">
-                        <div class="service-text text-center service-grid-overlay">
+                        <div class="service-text text-center">
 			    <h4 class="text-white font-weight-medium px-3">${service}</h4>
                             <p class="text-white px-3 mb-3">$${price}</p>
 			    <div class="w-100 bg-white text-center p-4" >

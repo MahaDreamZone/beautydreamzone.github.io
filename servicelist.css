@@ -1,5 +1,6 @@
 :root {
-    --image-size: 350px; /* Define the image size here */
+    image-size: 350px; /* Define the image size here */
+    grid-gap: 20px;
 }
 
 /* Reset default margin and padding */
@@ -38,11 +39,15 @@ body {
 
 /* Service grid item styles */
 .service-grid-item {
-    position: relative;
-    width: var(--image-size); /* Adjusted to use --image-size variable */
-    overflow: hidden;
-    border-right: 1px solid #ccc; /* Add a right border to create a line */
-    border-bottom: 1px solid #ccc; /* Add a bottom border to create a line */
+  width: var(--grid-item-width);
+  height: var(--grid-item-height);
+  background-color: var(--grid-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--grid-border-radius);
+  box-shadow: var(--grid-box-shadow);
+  transition: var(--grid-transition);
 }
 
 /* Service grid item image styles */
@@ -82,11 +87,11 @@ body {
 /* Service carousel container styles */
 .service-carousel {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
     padding: 20px;
     margin-top: 20px; /* Add margin top to create space from the header */
 }
+
 
 /* Service item styles */
 .service-item {
@@ -162,5 +167,38 @@ body {
 
 .checkboxContainer input[type="checkbox"] {
     margin-right: 5px;
+}
+.owl-next,
+.owl-prev {
+    display: none !important; /* Hide the next and prev buttons */
+}
+
+/* new sabeek*/
+/* Service select box */
+/* Service select box */
+.service-select {
+  width: 200px; /* Set your desired width */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Service select box options */
+.service-select option {
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Show options outside box on hover */
+.service-select:hover {
+  overflow-y: auto;
+}
+
+/* Position options outside box */
+.service-select:hover option {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: white; /* Adjust as needed */
+  z-index: 1;
 }
 
